@@ -62,7 +62,120 @@
         <button onclick="checkAnswer()">Check Answer</button>
         <p id="result"></p>
     </section>
+    <!DOCTYPE html><html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Quiz</title>
+    <style>
+        .dark-mode {
+            background-color: #222;
+            color: white;
+        }
+        .dark-mode section {
+            background-color: #333;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Math Quiz</h1><section>
+    <h2>Mixed Questions</h2>
+    <p id="mixedQuestion"></p>
+    <input type="text" id="mixedAnswer">
+    <button onclick="checkMixedQuiz()">Submit</button>
+    <p id="mixedResult"></p>
+</section>
+
+<section>
+    <h2>Addition Questions</h2>
+    <p id="additionQuestion"></p>
+    <input type="text" id="additionAnswer">
+    <button onclick="checkAdditionQuiz()">Submit</button>
+    <p id="additionResult"></p>
+</section>
+
+<section>
+    <h2>Subtraction Questions</h2>
+    <p id="subtractionQuestion"></p>
+    <input type="text" id="subtractionAnswer">
+    <button onclick="checkSubtractionQuiz()">Submit</button>
+    <p id="subtractionResult"></p>
+</section>
+
+<button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+
+<footer>
+    Math Project - Created by Ali
+</footer>
+
+<script>
+    const mixedQuestions = [
+        { question: "What is 5 + 9?", answer: 14 },
+        { question: "What is 12 - 4?", answer: 8 },
+        { question: "What is 16 × 3?", answer: 48 },
+        { question: "What is 16 ÷ 2?", answer: 8 },
+        { question: "What is 20 - 7?", answer: 13 }
+    ];
     
+    let currentMixed = Math.floor(Math.random() * mixedQuestions.length);
+    document.getElementById("mixedQuestion").innerText = mixedQuestions[currentMixed].question;
+    
+    function checkMixedQuiz() {
+        let userAnswer = document.getElementById("mixedAnswer").value;
+        let correctAnswer = mixedQuestions[currentMixed].answer;
+        if (parseInt(userAnswer) === correctAnswer) {
+            document.getElementById("mixedResult").innerText = "Correct!";
+        } else {
+            document.getElementById("mixedResult").innerText = "Try again!";
+        }
+    }
+    
+    const additionQuestions = [
+        { question: "What is 3 + 5?", answer: 8 },
+        { question: "What is 10 + 4?", answer: 14 },
+        { question: "What is 7 + 2?", answer: 9 }
+    ];
+    
+    const subtractionQuestions = [
+        { question: "What is 10 - 6?", answer: 4 },
+        { question: "What is 15 - 7?", answer: 8 },
+        { question: "What is 9 - 3?", answer: 6 }
+    ];
+    
+    let currentAddition = Math.floor(Math.random() * additionQuestions.length);
+    document.getElementById("additionQuestion").innerText = additionQuestions[currentAddition].question;
+    
+    let currentSubtraction = Math.floor(Math.random() * subtractionQuestions.length);
+    document.getElementById("subtractionQuestion").innerText = subtractionQuestions[currentSubtraction].question;
+    
+    function checkAdditionQuiz() {
+        let userAnswer = document.getElementById("additionAnswer").value;
+        let correctAnswer = additionQuestions[currentAddition].answer;
+        if (parseInt(userAnswer) === correctAnswer) {
+            document.getElementById("additionResult").innerText = "Correct!";
+        } else {
+            document.getElementById("additionResult").innerText = "Try again!";
+        }
+    }
+    
+    function checkSubtractionQuiz() {
+        let userAnswer = document.getElementById("subtractionAnswer").value;
+        let correctAnswer = subtractionQuestions[currentSubtraction].answer;
+        if (parseInt(userAnswer) === correctAnswer) {
+            document.getElementById("subtractionResult").innerText = "Correct!";
+        } else {
+            document.getElementById("subtractionResult").innerText = "Try again!";
+        }
+    }
+    
+    function toggleDarkMode() {
+        document.body.classList.toggle('dark-mode');
+    }
+</script>
+
+</body>
+    </html>
     <footer>
         Math Project - Created by Ali
     </footer>
