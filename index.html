@@ -260,3 +260,62 @@
     <img src="220px-Leonhard_Euler_2.jpg" alt="Leonhard Euler" width="300">
     </div>
 </section>
+<section>
+    <h2>Algebra</h2>
+    <p>Algebra is a branch of mathematics that uses symbols and letters to represent numbers and relationships between them.</p><h3>Who Created Algebra?</h3>
+<p>Algebra was developed by the Persian mathematician <strong>Al-Khwarizmi</strong> in the 9th century. His book, "Al-Kitab al-Mukhtasar fi Hisab al-Jabr wal-Muqabala," introduced systematic methods for solving equations.</p>
+
+<h3>How Algebra Works</h3>
+<p>In algebra, we use variables (like x and y) to represent unknown values and solve for them. For example:</p>
+<blockquote>2x + 5 = 15</blockquote>
+<p>We can solve for x by isolating it:</p>
+<p>2x = 15 - 5</p>
+<p>2x = 10</p>
+<p>x = 10 ÷ 2</p>
+<p>x = 5</p>
+
+<h3>Algebra Quiz</h3>
+
+<p><strong>Question 1:</strong> What is the value of x in the equation: 3x + 4 = 19?</p>
+<input type="text" id="answer1">
+<button onclick="checkAlgebraAnswer1()">Submit</button>
+<p id="result1"></p>
+
+<p><strong>Question 2:</strong> If y = 2x + 3, what is y when x = 4?</p>
+<input type="text" id="answer2">
+<button onclick="checkAlgebraAnswer2()">Submit</button>
+<p id="result2"></p>
+
+<p><strong>Question 3:</strong> Solve for x: 4x - 7 = 13</p>
+<input type="text" id="answer3">
+<button onclick="checkAlgebraAnswer3()">Submit</button>
+<p id="result3"></p>
+
+</section><script>
+function checkAlgebraAnswer1() {
+    var userAnswer = document.getElementById('answer1').value;
+    if (parseInt(userAnswer) === 5) {
+        document.getElementById('result1').innerText = 'Correct!';
+    } else {
+        document.getElementById('result1').innerText = 'Try again!';
+    }
+}
+
+function checkAlgebraAnswer2() {
+    var userAnswer = document.getElementById('answer2').value;
+    if (parseInt(userAnswer) === 11) {
+        document.getElementById('result2').innerText = 'Correct!';
+    } else {
+        document.getElementById('result2').innerText = 'Try again!';
+    }
+}
+
+function checkAlgebraAnswer3() {
+    var userAnswer = document.getElementById('answer3').value;
+    if (parseInt(userAnswer) === 5) {
+        document.getElementById('result3').innerText = 'Correct!';
+    } else {
+        document.getElementById('result3').innerText = 'Try again!';
+    }
+}
+</script>
