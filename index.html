@@ -55,13 +55,34 @@
         </ul>
     </section>
     
-    <section>
-        <h2>Interactive Examples</h2>
-        <p>Try solving the following equation: <strong>2x + 3 = 7</strong></p>
-        <input type="text" id="answer" placeholder="Enter your answer">
-        <button onclick="checkAnswer()">Check Answer</button>
-        <p id="result"></p>
-    </section>
+        <section>
+    <h2>Interactive Examples</h2>
+    <p>Try solving the following equation: <strong>2x + 3 = 7</strong></p>
+    <input type="text" id="answer" placeholder="Enter your answer">
+    <button onclick="checkAnswer()">Check Answer</button>
+    <p id="result"></p>
+</section>
+
+<script>
+    function checkAnswer() {
+    let userAnswer = Number(document.getElementById("answer").value); // Convert to number
+    let correctAnswer = (7 - 3) / 2; // Solves 2x + 3 = 7
+
+    let resultElement = document.getElementById("result");
+
+    if (userAnswer === correctAnswer) { // Strict comparison
+        resultElement.innerHTML = "Correct! ✅";
+        resultElement.style.color = "green";
+    } else {
+        resultElement.innerHTML = "Incorrect, try again. ❌";
+        resultElement.style.color = "red";
+    }
+    }
+        
+    
+</script>
+        
+
     <!DOCTYPE html><html lang="en">
 <head>
     <meta charset="UTF-8">
