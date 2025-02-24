@@ -68,14 +68,50 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Math Quiz</title>
     <style>
-        .dark-mode {
-            background-color: #222;
-            color: white;
-        }
-        .dark-mode section {
-            background-color: #333;
-            color: white;
-        }
+
+        :root {
+    --bg-color: white;
+    --text-color: black;
+    --section-bg: #f0f0f0;
+    --transition-speed: 0.3s;
+}
+
+.dark-mode {
+    --bg-color: #222;
+    --text-color: white;
+    --section-bg: #333;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+section {
+    background-color: var(--section-bg);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 15px;
+}
+
+/* Dark mode toggle button styling */
+#dark-mode-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 8px 12px;
+    background-color: var(--section-bg);
+    color: var(--text-color);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background var(--transition-speed), color var(--transition-speed);
+}
+
+#dark-mode-toggle:hover {
+    background-color: #555;
+}
     </style>
 </head>
 <body>
