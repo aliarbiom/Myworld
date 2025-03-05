@@ -422,38 +422,68 @@ function checkAlgebraAnswer3() {
 
 <section id="calculus-section">
     <h1>Calculus</h1>
-    <p>Calculus is a branch of mathematics that focuses on limits, functions, derivatives, integrals, and infinite series. It is primarily concerned with change and motion, and it plays a crucial role in understanding and solving problems in areas such as physics, engineering, economics, and computer science.</p>
+    <p>Calculus is a branch of mathematics that studies continuous change. It is divided into two main areas: differential calculus, which focuses on rates of change and slopes of curves, and integral calculus, which deals with the accumulation of quantities and areas under curves.</p>
 
-    <h2>Who created Calculus?</h2>
-    <p>Calculus was independently developed by two renowned mathematicians: Sir Isaac Newton and Gottfried Wilhelm Leibniz in the late 17th century. While both made significant contributions, their approaches and notations differed. Newton's work focused on problems of motion and change, while Leibniz developed much of the notation used in modern calculus.</p>
+    <h2>Who Created Calculus?</h2>
+    <p>Calculus was developed independently by Sir Isaac Newton and Gottfried Wilhelm Leibniz in the late 17th century. Their work laid the foundation for modern calculus, which has since become a fundamental tool in physics, engineering, economics, and many other fields.</p>
+
+    <h2>Basic Calculus Concepts</h2>
+    <ul>
+        <li><strong>Derivative:</strong> Measures how a function changes as its input changes.</li>
+        <li><strong>Integral:</strong> Represents the accumulation of quantities and areas under curves.</li>
+        <li><strong>Limit:</strong> Describes the behavior of a function as it approaches a certain value.</li>
+    </ul>
 
     <div class="quiz-container">
         <h3>Quiz: Test Your Knowledge of Calculus</h3>
-        <form id="quizForm">
+        <form id="calculusQuizForm">
             <div class="question">
-                <label>1. Who developed calculus alongside Isaac Newton?</label><br>
-                <input type="radio" id="question1a" name="q1" value="Gottfried Wilhelm Leibniz">
-                <label for="question1a">Gottfried Wilhelm Leibniz</label><br>
-                <input type="radio" id="question1b" name="q1" value="Albert Einstein">
-                <label for="question1b">Albert Einstein</label><br>
-                <input type="radio" id="question1c" name="q1" value="Carl Friedrich Gauss">
-                <label for="question1c">Carl Friedrich Gauss</label><br>
+                <label>1. Who are the two mathematicians credited with developing calculus?</label><br>
+                <input type="radio" id="calcQ1a" name="calcQ1" value="Isaac Newton and Gottfried Wilhelm Leibniz">
+                <label for="calcQ1a">Isaac Newton and Gottfried Wilhelm Leibniz</label><br>
+                <input type="radio" id="calcQ1b" name="calcQ1" value="Albert Einstein and Carl Friedrich Gauss">
+                <label for="calcQ1b">Albert Einstein and Carl Friedrich Gauss</label><br>
+                <input type="radio" id="calcQ1c" name="calcQ1" value="Euclid and Pythagoras">
+                <label for="calcQ1c">Euclid and Pythagoras</label><br>
             </div>
             
             <div class="question">
-                <label>2. What does calculus primarily deal with?</label><br>
-                <input type="radio" id="question2a" name="q2" value="Change and motion">
-                <label for="question2a">Change and motion</label><br>
-                <input type="radio" id="question2b" name="q2" value="Solving equations">
-                <label for="question2b">Solving equations</label><br>
-                <input type="radio" id="question2c" name="q2" value="Geometrical shapes">
-                <label for="question2c">Geometrical shapes</label><br>
+                <label>2. What does the derivative of a function represent?</label><br>
+                <input type="radio" id="calcQ2a" name="calcQ2" value="The slope of a function at a given point">
+                <label for="calcQ2a">The slope of a function at a given point</label><br>
+                <input type="radio" id="calcQ2b" name="calcQ2" value="The total area under the function">
+                <label for="calcQ2b">The total area under the function</label><br>
+                <input type="radio" id="calcQ2c" name="calcQ2" value="The sum of all values in the function">
+                <label for="calcQ2c">The sum of all values in the function</label><br>
             </div>
 
-            <button type="button" class="btn" onclick="checkAnswers()">Submit</button>
+            <button type="button" class="btn" onclick="checkCalculusAnswers()">Submit</button>
         </form>
     </div>
 </section>
+
+<style>
+    #calculus-section {
+        margin-bottom: 80px;
+    }
+</style>
+
+<script>
+    function checkCalculusAnswers() {
+        const correctAnswers = {
+            calcQ1: 'Isaac Newton and Gottfried Wilhelm Leibniz',
+            calcQ2: 'The slope of a function at a given point'
+        };
+        let score = 0;
+        const form = document.getElementById('calculusQuizForm');
+        const answers = new FormData(form);
+
+        if (answers.get('calcQ1') === correctAnswers.calcQ1) score++;
+        if (answers.get('calcQ2') === correctAnswers.calcQ2) score++;
+
+        alert('You scored ' + score + ' out of 2');
+    }
+</script>
 
 <section id="probability-section">
     <h1>Probability</h1>
