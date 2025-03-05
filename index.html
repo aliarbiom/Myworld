@@ -454,3 +454,68 @@ function checkAlgebraAnswer3() {
         </form>
     </div>
 </section>
+
+<section id="probability-section">
+    <h1>Probability</h1>
+    <p>Probability is a branch of mathematics that deals with the likelihood or chance of different outcomes occurring. It is used to quantify uncertainty and is widely applied in various fields such as statistics, finance, science, and engineering. In simple terms, probability measures the chance of an event happening.</p>
+
+    <h2>Who created the Concept of Probability?</h2>
+    <p>The concept of probability emerged from the work of several mathematicians in the 17th century, including Blaise Pascal and Pierre de Fermat. They laid the foundations for modern probability theory by investigating problems related to gambling and games of chance.</p>
+
+    <h2>Basic Probability Concepts</h2>
+    <ul>
+        <li><strong>Event:</strong> An outcome or a set of outcomes from a probability experiment.</li>
+        <li><strong>Sample Space:</strong> The set of all possible outcomes of a probability experiment.</li>
+        <li><strong>Probability of an Event:</strong> The ratio of favorable outcomes to the total number of possible outcomes.</li>
+    </ul>
+
+    <div class="quiz-container">
+        <h3>Quiz: Test Your Knowledge of Probability</h3>
+        <form id="probabilityQuizForm">
+            <div class="question">
+                <label>1. Who are credited with the creation of modern probability theory?</label><br>
+                <input type="radio" id="question1a" name="q1" value="Blaise Pascal and Pierre de Fermat">
+                <label for="question1a">Blaise Pascal and Pierre de Fermat</label><br>
+                <input type="radio" id="question1b" name="q1" value="Isaac Newton and Gottfried Wilhelm Leibniz">
+                <label for="question1b">Isaac Newton and Gottfried Wilhelm Leibniz</label><br>
+                <input type="radio" id="question1c" name="q1" value="Albert Einstein and Carl Friedrich Gauss">
+                <label for="question1c">Albert Einstein and Carl Friedrich Gauss</label><br>
+            </div>
+            
+            <div class="question">
+                <label>2. What is the sample space in probability?</label><br>
+                <input type="radio" id="question2a" name="q2" value="The set of all possible outcomes">
+                <label for="question2a">The set of all possible outcomes</label><br>
+                <input type="radio" id="question2b" name="q2" value="The most likely outcome">
+                <label for="question2b">The most likely outcome</label><br>
+                <input type="radio" id="question2c" name="q2" value="Only favorable outcomes">
+                <label for="question2c">Only favorable outcomes</label><br>
+            </div>
+
+            <button type="button" class="btn" onclick="checkProbabilityAnswers()">Submit</button>
+        </form>
+    </div>
+</section>
+
+<style>
+    #probability-section {
+        margin-bottom: 80px;
+    }
+</style>
+
+<script>
+    function checkProbabilityAnswers() {
+        const correctAnswers = {
+            q1: 'Blaise Pascal and Pierre de Fermat',
+            q2: 'The set of all possible outcomes'
+        };
+        let score = 0;
+        const form = document.getElementById('probabilityQuizForm');
+        const answers = new FormData(form);
+
+        if (answers.get('q1') === correctAnswers.q1) score++;
+        if (answers.get('q2') === correctAnswers.q2) score++;
+
+        alert('You scored ' + score + ' out of 2');
+    }
+</script>
